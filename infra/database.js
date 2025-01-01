@@ -1,4 +1,4 @@
-import { Client } from 'pg';
+import { Client } from "pg";
 
 async function query(queryObject) {
     let client;
@@ -17,9 +17,9 @@ async function query(queryObject) {
 
 function getSSLValues() {
     if (process.env.POSTGRES_CA) {
-      return {
-        ca: process.env.POSTGRES_CA,
-      };
+        return {
+            ca: process.env.POSTGRES_CA,
+        };
     }
     return process.env.NODE_ENV === "production";
 }
@@ -40,5 +40,5 @@ async function getNewClient() {
 
 export default {
     query,
-    getNewClient
+    getNewClient,
 };
