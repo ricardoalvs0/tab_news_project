@@ -2,6 +2,7 @@ import database from "infra/database.js";
 
 export default async function status(req, res) {
     const updatedAt = new Date().toISOString();
+    process.env.API_KEY = 12345;
 
     const databaseVersionResult = await database.query("SHOW server_version;");
     const databaseVersionValue = databaseVersionResult.rows[0].server_version;
